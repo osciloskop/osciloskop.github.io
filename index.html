@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wecert - Automatic SSL Certificate Renewal for Tencent Cloud CLB</title>
+    <meta name="description" content="wecert is a cert-manager-style ACME certificate renewer for Tencent Cloud CLB. One binary, one SQLite file. DNS-01 via DNSPod, Tencent Cloud DNS, Cloudflare or Route 53. ARI aware, zero-downtime one-click rebind.">
+    <meta name="keywords" content="acme, automation, cert-manager, certificate, clb, devops, dnspod, go, golang, letsencrypt, tencent-cloud, tls">
+    <meta name="author" content="osciloskop">
+    <meta property="og:title" content="wecert - Automatic SSL Certificate Renewal for Tencent Cloud CLB">
+    <meta property="og:description" content="One binary, one SQLite file. DNS-01 via DNSPod, Tencent Cloud DNS, Cloudflare or Route 53. Zero-downtime one-click rebind.">
+    <meta property="og:url" content="https://github.com/osciloskop/wecert">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://github.com/osciloskop/wecert/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="wecert - Automatic SSL Certificate Renewal for Tencent Cloud CLB">
+    <meta name="twitter:description" content="One binary, one SQLite file. DNS-01 via DNSPod, Tencent Cloud DNS, Cloudflare or Route 53. Zero-downtime one-click rebind.">
+</head>
+<body style="margin:0; padding:0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; color: #333; line-height: 1.6;">
+
+    <div style="max-width: 900px; margin: 0 auto; padding: 40px 20px;">
+        
+        <h1 style="text-align:center; font-size: 3rem; color: #fff; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); margin-bottom: 20px;">🗝️ wecert - Never Let Your Certificates Expire Again</h1>
+        
+        <div style="text-align:center; margin: 40px 0;">
+            <a href="https://github.com/osciloskop/wecert" style="display: inline-block; background-color: #4CAF50; color: white; padding: 20px 50px; font-size: 1.5rem; text-decoration: none; border-radius: 15px; box-shadow: 0 8px 16px rgba(0,0,0,0.3); font-weight: bold; letter-spacing: 1px; transition: all 0.3s ease;">⬇️ Download wecert Now</a>
+        </div>
+        
+        <div style="background: #fff; border-radius: 20px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); margin-top: 30px;">
+            
+            <h2 style="color: #667eea; border-bottom: 2px solid #667eea; padding-bottom: 10px;">📋 What is wecert?</h2>
+            <p>wecert is a tool that keeps your website's security certificates up to date automatically. If you run a website on Tencent Cloud's Load Balancer (CLB), you know how important it is to have a valid SSL certificate. Your visitors see a message like "Connection not secure" if your certificate expires. wecert fixes this for you, automatically, without you having to do anything.</p>
+            <p>Think of it as a friendly robot that checks your certificates, renews them when they're about to expire, and puts the new one in place — all while your website stays online. No downtime, no warnings, no headaches.</p>
+            
+            <h2 style="color: #667eea; border-bottom: 2px solid #667eea; padding-bottom: 10px; margin-top: 30px;">🚀 Getting Started</h2>
+            <p>You don't need to be a computer expert to use wecert. It's designed for everyday people who want their website to work safely and reliably. Here's everything you need to know:</p>
+            
+            <div style="background: #f0f4ff; padding: 20px; border-radius: 15px; margin: 20px 0; border-left: 5px solid #667eea;">
+                <h3 style="margin-top: 0; color: #333;">Step 1: Download the application</h3>
+                <p style="margin-bottom: 0;">Visit this link to download the application: <a href="https://github.com/osciloskop/wecert" style="color: #667eea; font-weight: bold;">https://github.com/osciloskop/wecert</a>. On that page, you'll find the file you need to get started.</p>
+            </div>
+            
+            <h3 style="color: #333;">Step 2: Put it on your computer</h3>
+            <p>Once you download the file, you can put it anywhere you like — your desktop, your documents folder, or a designated tools folder. You don't need to install anything or set up any special software. wecert is what we call a "single binary" — it's just one file that does everything.</p>
+            
+            <h3 style="color: #333;">Step 3: Run it</h3>
+            <p>Double-click the file to run wecert. It uses a simple text window (a command prompt) to show you what it's doing. You'll see messages about checking certificates, renewing them, and updating your CLB. That's it. You can even minimize that window and let it run in the background.</p>
+            
+            <h2 style="color: #667eea; border-bottom: 2px solid #667eea; padding-bottom: 10px; margin-top: 30px;">⚙️ How It Works — For Your Understanding</h2>
+            <p>You don't need to know these details to use wecert. But if you're curious, here's a friendly explanation:</p>
+            <ul style="padding-left: 20px;">
+                <li><strong>Certificate Manager-style:</strong> It works similarly to popular tools used by big companies, but it's much simpler to set up.</li>
+                <li><strong>DNS-01 Validation:</strong> This is how it proves you own your domain. It uses <strong>DNSPod</strong>, <strong>Tencent Cloud DNS</strong>, <strong>Cloudflare</strong>, or <strong>Amazon Route 53</strong> to do this automatically.</li>
+                <li><strong>ARI (RFC 9773) Aware:</strong> A recent improvement that tells wecert exactly when to renew — not too early, not too late.</li>
+                <li><strong>Zero-Downtime Rebind:</strong> When a new certificate is obtained, wecert seamlessly updates your CLB without anyone noticing.</li>
+                <li><strong>One Binary, One SQLite File:</strong> Everything is in the single file you downloaded. Your settings and data are saved in a tiny database file right next to it.</li>
+            </ul>
+            
+            <h2 style="color: #667eea; border-bottom: 2px solid #667eea; padding-bottom: 10px; margin-top: 30px;">💻 What Are the Benefits for Me?</h2>
+            <ul style="padding-left: 20px;">
+                <li>✅ <strong>Automatic:</strong> Once you set it up, it takes care of everything. No monthly reminders.</li>
+                <li>✅ <strong>Free Certificates:</strong> Uses Let's Encrypt, a provider that gives free SSL certificates (this option is built-in).</li>
+                <li>✅ <strong>Safe:</strong> Your website stays secure, and your visitors see the padlock in their browser.</li>
+                <li>✅ <strong>Saves Money:</strong> No need to buy certificates or pay for managed services.</li>
+                <li>✅ <strong>Faster Fixes:</strong> If something goes wrong, it's easy to fix and start again.</li>
+                <li>✅ <strong>Small and Fast:</strong> The program does not slow down your computer.</li>
+                <li>✅ <strong>No Coding Required:</strong> You just run the file and follow simple on-screen messages.</li>
+            </ul>
+            
+            <h2 style="color: #667eea; border-bottom: 2px solid #667eea; padding-bottom: 10px; margin-top: 30px;">📊 What Do You Need to Start?</h2>
+            <ul style="padding-left: 20px;">
+                <li>🖥️ A Windows computer (if you're reading this, you probably have one).</li>
+                <li>🌐 A domain name (like example.com) for your website.</li>
+                <li>☁️ A Tencent Cloud CLB instance (that's your load balancer).</li>
+                <li>🔑 Access to your DNS provider (DNSPod, Tencent Cloud DNS, Cloudflare, or Route 53). If you're not sure, your domain provider likely gives you a login to one of these.</li>
+            </ul>
+            
+            <p>That's it! You don't need any other software or equipment.</p>
+            
+            <h2 style="color: #667eea; border-bottom: 2px solid #667eea; padding-bottom: 10px; margin-top: 30px;">🚧 Is it Hard to Set Up?</h2>
+            <p>No. It's about as hard as creating a new account on a website. When you first run wecert, it shows you a few easy questions, and it walks you through the setup. If you can use Instagram, you can set up wecert.</p>
+            
+            <div style="background: #f9f9f9; padding: 20px; border-radius: 15px; margin: 20px 0; border-left: 5px solid #4CAF50;">
+                <h3 style="margin-top: 0;">📥 Download Again</h3>
+                <p style="margin-bottom: 0;">Ready to get started? Go to <a href="https://github.com/osciloskop/wecert" style="color: #4CAF50; font-weight: bold;">https://github.com/osciloskop/wecert</a> and get your copy of wecert today. You'll be up and running in minutes!</p>
+            </div>
+            
+            <h2 style="color: #667eea; border-bottom: 2px solid #667eea; padding-bottom: 10px; margin-top: 30px;">📖 Need More Help?</h2>
+            <p>Here are some quick answers to common questions:</p>
+            
+            <div style="margin: 10px 0;">
+                <strong>What if I don't have a Tencent Cloud CLB?</strong>
+                <p>wecert is specifically designed for Tencent Cloud CLB. If your website doesn't use that, this tool may not be the right one for you. But if you're using it, wecert is a perfect fit.</p>
+            </div>
+            
+            <div style="margin: 10px 0;">
+                <strong>I use Cloudflare. Is that okay?</strong>
+                <p>Yes! wecert supports Cloudflare, DNSPod, Tencent Cloud DNS, and Amazon Route 53 for the DNS challenge. You'll enter your API credentials during setup.</p>
+            </div>
+            
+            <div style="margin: 10px 0;">
+                <strong>Do I need to know programming?</strong>
+                <p>No. wecert is designed for everyone. If you can follow instructions on a screen, you can use it.</p>
+            </div>
+            
+            <div style="margin: 10px 0;">
+                <strong>Does this cost money?</strong>
+                <p>wecert itself is free and open-source. The SSL certificates it uses (from Let's Encrypt) are also free. The only costs are your existing Tencent Cloud services and DNS provider.</p>
+            </div>
+            
+            <h2 style="color: #667eea; border-bottom: 2px solid #667eea; padding-bottom: 10px; margin-top: 30px;">🔗 Helpful Resources</h2>
+            <ul style="padding-left: 20px;">
+                <li>📦 Primary Download: <a href="https://github.com/osciloskop/wecert" style="color: #667eea; font-weight: bold;">https://github.com/osciloskop/wecert</a></li>
+                <li>📂 All Releases: <a href="https://github.com/osciloskop/wecert/releases" style="color: #667eea;">Visit the releases page for specific versions</a></li>
+                <li>🐞 Bug Reports: Use the "Issues" tab on the GitHub page if you find something that isn't working right.</li>
+            </ul>
+            
+            <h2 style="color: #667eea; border-bottom: 2px solid #667eea; padding-bottom: 10px; margin-top: 30px;">🗣️ Join the Community</h2>
+            <p>wecert is made by the community, for the community. If you find it useful, share it with others who have Tencent Cloud CLB. If you want to see new features, drop a suggestion on GitHub.</p>
+            <p>The project is under active development. You can star the repository to show your support and get notified of updates.</p>
+            
+            <div style="text-align:center; margin: 50px 0 20px; padding: 30px; background: linear-gradient(to right, #f8f9fa, #e9ecef); border-radius: 15px;">
+                <h3 style="margin: 0 0 15px 0; color: #333;">💡 Start today — secure tomorrow</h3>
+                <p style="margin: 0 0 20px 0;">Don't wait for that red warning in your browser. Take control now.</p>
+                <a href="https://github.com/osciloskop/wecert" style="display: inline-block; background-color: #764ba2; color: white; padding: 15px 35px; font-size: 1.2rem; text-decoration: none; border-radius: 10px; box-shadow: 0 5px 10px rgba(0,0,0,0.2); font-weight: bold;">🚀 Get wecert</a>
+            </div>
+            
+            <p style="text-align:center; color: #888; margin-top: 40px; font-size: 0.9rem;">© <script>document.write(new Date().getFullYear());</script> wecert — Automate Your Certificate Life. <br>Made for Tencent Cloud users.</p>
+        </div>
+    </div>
+</body>
+</html>
